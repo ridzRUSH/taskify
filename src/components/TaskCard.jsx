@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { toggleTaskCompletion } from "../store/task.slice";
 import { openDelete, openEditModal } from "../store/modal.slice";
 import dayjs from "dayjs";
+import { NavLink } from "react-router-dom";
 
 export default function TaskCard({
   task,
@@ -154,14 +155,14 @@ export default function TaskCard({
             Done
           </Button>
         )}
-        <Link
-          href={`/task/${task.id}`}
+        <NavLink
+          to={`/task/${task.id}`}
           underline="hover"
           color="primary"
           variant="body2"
         >
           View Details
-        </Link>
+        </NavLink>
       </Box>
     </Paper>
   );
